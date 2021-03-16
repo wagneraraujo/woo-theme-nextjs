@@ -1,6 +1,8 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
+import { SchemaLink } from "@apollo/client/link/schema";
 
 const defaultOptions = {
+  credentials: "same-origin",
   watchQuery: {
     fetchPolicy: "no-cache",
     errorPolicy: "ignore"
@@ -15,7 +17,7 @@ const cache = new InMemoryCache({
   resultCaching: false
 });
 const link = createHttpLink({
-  uri: `${process.env.NEXT_PUBLIC_WORDPRESS}/graphql`
+  uri: "http://localhost/vendedores/graphql"
 });
 
 const client = new ApolloClient({
