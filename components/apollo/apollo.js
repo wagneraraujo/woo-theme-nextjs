@@ -17,7 +17,7 @@ const cache = new InMemoryCache({
   resultCaching: false
 });
 const link = createHttpLink({
-  uri: "http://localhost/vendedores/graphql"
+  uri: `${process.env.NEXT_PUBLIC_WORDPRESS}/graphql/`
 });
 
 const client = new ApolloClient({

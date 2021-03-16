@@ -1,12 +1,10 @@
-import { useQuery } from "@apollo/client";
 import client from "../components/apollo/apollo";
 import { GET_MENUS } from "../components/queries/get-menus";
-export default function Home({ menus }) {
-  console.log("launches", menus);
-
+import Layout from "../components/layouts";
+export default function Home({ data }) {
   return (
     <>
-      <div className="container">home</div>
+      <Layout data={data}></Layout>
     </>
   );
 }
@@ -17,9 +15,14 @@ export async function getStaticProps() {
   });
   return {
     props: {
-      menus: {
-        headerMenus: data?.headerMenus?.edges
+      data: {
+        header: data?.header || [],
+        menus: {
+          headerMenus: data?.headerMenus?.edges
+        }
       }
-    }
+    },
+
+    revalidate: 1
   };
 }
