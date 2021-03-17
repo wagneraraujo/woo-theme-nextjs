@@ -7,6 +7,11 @@ export const GET_MENUS = gql`
       siteLogoUrl
       siteTitle
     }
+    footer: getFooter {
+      copyrightText
+      sidebarOne
+      sidebarTwo
+    }
     headerMenus: menuItems(
       where: { location: HCMS_MENU_HEADER, parentId: "0" }
     ) {
