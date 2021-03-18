@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
+    "dompurify": "^2.2.7",
     "graphql": "^15.5.0",
     "lodash": "^4.17.21",
     "next": "10.0.8",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "sanitize": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
